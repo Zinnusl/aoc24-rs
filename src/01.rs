@@ -44,14 +44,13 @@ fn part2() {
         .collect::<Vec<_>>();
 
     let left = numbers.iter().copied().step_by(2).collect::<Vec<_>>();
-    let mut right = numbers
+    let right = numbers
         .iter()
         .skip(1)
         .step_by(2)
         .copied()
+        .sorted()
         .collect::<Vec<_>>();
-
-    right.sort();
 
     let product = right
         .iter()
